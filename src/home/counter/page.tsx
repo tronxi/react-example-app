@@ -4,9 +4,11 @@ import React, {useContext, useState} from "react";
 import {PokemonContext} from "../pokemon-context.ts";
 import {retrieveWithLimit} from "../../services/pokemon-client.ts";
 import Pokemon from "../../components/pokemon/pokemon.tsx";
+import {Link, useNavigate} from "react-router-dom";
 
 
 export default function Counter() {
+    const navigate = useNavigate();
     const [count, setCount] = useState(0);
     const [pokemonComponents, setPokemonComponents] = useState<React.JSX.Element[]>([]);
     const [_, setContext] = useContext(PokemonContext);
@@ -14,7 +16,7 @@ export default function Counter() {
   function handleClick() {
     setCount(count + 1);
     if(count > 5) {
-      //router.push('/home/pokemon-list', { scroll: false })
+      navigate('/home/pokemon-list')
     }
   }
 
@@ -49,7 +51,7 @@ export default function Counter() {
               {pokemonComponents}
           </div>
         <div className="button">
-          {/*<Link href="/home/pokemon-list">Cambiar a Pokemons</Link>*/}
+          <Link to="/home/pokemon-list">Ver todos</Link>
         </div>
       </>
 )

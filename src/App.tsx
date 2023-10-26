@@ -1,12 +1,12 @@
 import './App.css'
-import Home from "./home/layout.tsx";
+import {Link} from "react-router-dom";
 
 function App() {
 
   return (
     <>
-      <main>
-        <Home></Home>
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <Link to="/home/pokemon-list" className="button">Hola</Link>
       </main>
     </>
   )

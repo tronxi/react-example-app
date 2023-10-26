@@ -4,7 +4,8 @@ import {useState} from "react";
 import {PokemonModel} from "../models/pokemon.ts";
 import { PokemonContext } from "./pokemon-context.ts";
 import SelectedPokemon from "../components/selected-pokemon/selected-pokemon.tsx";
-import Counter from "./counter/page.tsx";
+import {Outlet} from "react-router-dom";
+
 export default function Home() {
   const [pokemonModel, setPokemonModel] = useState<PokemonModel>();
 
@@ -16,7 +17,7 @@ export default function Home() {
           <span></span>}
     </nav>
     <PokemonContext.Provider value={[pokemonModel, setPokemonModel]}>
-      <Counter></Counter>
+      <Outlet/>
     </PokemonContext.Provider>
   </section>)
 }

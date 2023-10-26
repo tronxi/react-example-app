@@ -6,6 +6,7 @@ import {PokemonContext} from "../pokemon-context.ts";
 import {PokemonModel} from "../../models/pokemon.ts";
 import {retrieveAll} from "../../services/pokemon-client.ts";
 import Pokemon from "../../components/pokemon/pokemon.tsx";
+import {Link} from "react-router-dom";
 
 export default function PokemonList() {
     const [pokemonComponents, setPokemonComponents] = useState<React.JSX.Element[]>([]);
@@ -38,7 +39,7 @@ export default function PokemonList() {
       <>
         <input onChange={onFilter} className="button"/>
           <div className="button">
-              {/*<Link href="/home/counter">Contador</Link>*/}
+              <Link to="/home/counter">Contador</Link>
           </div>
           <div>Pokemons</div>
           {pokemonComponents}
